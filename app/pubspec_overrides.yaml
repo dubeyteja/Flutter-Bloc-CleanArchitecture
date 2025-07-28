@@ -1,4 +1,4 @@
-# melos_managed_dependency_overrides: data,domain,initializer,nals_lints,resources,shared
+# melos_managed_dependency_overrides: data,domain,initializer,nals_lints,resources,shared,authentication,home,product,profile,app_core
 dependency_overrides:
   analyzer: 6.11.0
   source_gen: ^1.2.7
@@ -15,3 +15,13 @@ dependency_overrides:
     path: ../resources
   shared:
     path: ../shared
+  authentication:
+    path: ../features/authentication
+  home:
+    path: ../features/home
+  product:
+    path: ../features/product
+  profile:
+    path: ../features/profile
+  app_core:
+    path: ../app_core
