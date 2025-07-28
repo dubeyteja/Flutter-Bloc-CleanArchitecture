@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:app_core/app_core.dart';
+import 'package:app/app.dart';
 
 part 'main_event.freezed.dart';
 

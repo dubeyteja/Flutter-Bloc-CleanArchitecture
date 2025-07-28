@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:resources/resources.dart';
 
 import 'package:app_core/app_core.dart';
+import 'package:app/app.dart';
 import 'bloc/my_page.dart';
 
 @RoutePage(name: 'MyPageRoute')

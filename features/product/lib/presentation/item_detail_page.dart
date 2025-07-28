@@ -3,6 +3,7 @@ import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_core/app_core.dart';
+import 'package:app/app.dart';
 import 'bloc/item_detail.dart';
 
 @RoutePage()

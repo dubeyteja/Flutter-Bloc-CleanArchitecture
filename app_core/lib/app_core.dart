@@ -1,15 +1,7 @@
 library app_core;
 
-// Base classes
-export 'base/base_page_state.dart';
-export 'base/bloc/app_bloc_observer.dart';
-export 'base/bloc/base_bloc.dart';
-export 'base/bloc/base_bloc_event.dart';
-export 'base/bloc/base_bloc_state.dart';
-export 'base/bloc/common/common_bloc.dart';
-export 'base/bloc/common/common_event.dart';
-export 'base/bloc/common/common_state.dart';
-export 'base/bloc/mixin/event_transformer_mixin.dart';
+// Simple base classes for features
+export 'simple_base_page_state.dart';
 
 // Common views
 export 'common_view/common_app_bar.dart';

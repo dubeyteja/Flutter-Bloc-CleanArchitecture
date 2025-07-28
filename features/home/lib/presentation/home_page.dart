@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared/shared.dart';
 
 import 'package:app_core/app_core.dart';
+import 'package:app/app.dart';
 import 'bloc/home.dart';
 
 @RoutePage()

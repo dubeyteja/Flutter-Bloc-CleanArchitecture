@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:resources/resources.dart';
 
 import 'package:app_core/app_core.dart';
+import 'package:app/app.dart';
 import 'bloc/search.dart';
 
 @RoutePage()
