@@ -25,6 +25,13 @@ Flutter project using clean architecture and bloc pattern with a **feature-first
 - **Scalable Structure**: Easy to maintain and extend with new features
 - **Team Collaboration**: Multiple teams can work on different features independently
 
+## Migration Documentation
+
+- **📖 [Flutter Feature Migration Guide](flutter_feature_migration.md)**: Flutter-specific migration details, widget organization, BLoC patterns, and testing
+- **📖 [General Migration Guide](MIGRATION_GUIDE.md)**: Complete migration guide from layer-first to feature-first architecture
+- **📖 [Feature-First Architecture](FEATURE_FIRST_ARCHITECTURE.md)**: Detailed explanation of the new architecture approach
+- **🔧 [Migration Validation Tool](tools/validate_migration.sh)**: Script to validate migration implementation
+
 ## Features
 
 1. Architecture: Clean Architecture
