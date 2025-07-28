@@ -1,5 +1,5 @@
-name: domain
-description: A new Flutter package project.
+name: app_core
+description: Core app components and base classes shared between app and features
 version: 0.0.1
 publish_to: none
 
@@ -9,29 +9,33 @@ environment:
 
 dependencies:
   async: 2.13.0
-  dartx: 1.2.0
+  auto_route: 7.8.4
+  domain:
+    path: ../domain
   flutter:
     sdk: flutter
-  freezed_annotation: ^2.4.4
+  flutter_bloc: ^9.1.0
+  flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.0.17
   get_it: ^8.0.2
+  infinite_scroll_pagination: ^4.0.0
   injectable: 2.5.0
-  # meta: 1.16.0
   resources:
     path: ../resources
   rxdart: 0.28.0
   shared:
     path: ../shared
-  tuple: 2.0.2
 
 dev_dependencies:
+  auto_route_generator: 7.3.2
+  bloc_test: ^10.0.0
   build_runner: ^2.4.15
   custom_lint: ^0.7.0
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
-  freezed: ^2.5.8
+  freezed: 2.5.7
+  freezed_annotation: ^2.4.4
   injectable_generator: ^2.6.2
   logging: ^1.3.0
   mocktail: ^1.0.4
-  nals_lints:
-    path: ../nals_lints

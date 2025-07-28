@@ -25,9 +25,29 @@ scripts:
     run: dart pub global run melos exec --fail-fast --scope="*app*" --depends-on="build_runner" "flutter packages pub run build_runner build"
     description: build_runner build app module.
 
-  build_shared:
-    run: dart pub global run melos exec --fail-fast --scope="*shared*" --depends-on="build_runner" "flutter packages pub run build_runner build"
-    description: build_runner build shared module.
+  build_app_core:
+    run: dart pub global run melos exec --fail-fast --scope="*app_core*" --depends-on="build_runner" "flutter packages pub run build_runner build"
+    description: build_runner build app_core module.
+
+  build_authentication:
+    run: dart pub global run melos exec --fail-fast --scope="*authentication*" --depends-on="build_runner" "flutter packages pub run build_runner build"
+    description: build_runner build authentication feature.
+
+  build_home:
+    run: dart pub global run melos exec --fail-fast --scope="*home*" --depends-on="build_runner" "flutter packages pub run build_runner build"
+    description: build_runner build home feature.
+
+  build_product:
+    run: dart pub global run melos exec --fail-fast --scope="*product*" --depends-on="build_runner" "flutter packages pub run build_runner build"
+    description: build_runner build product feature.
+
+  build_profile:
+    run: dart pub global run melos exec --fail-fast --scope="*profile*" --depends-on="build_runner" "flutter packages pub run build_runner build"
+    description: build_runner build profile feature.
+
+  build_features:
+    run: dart pub global run melos exec --fail-fast --scope="*authentication*" --scope="*home*" --scope="*product*" --scope="*profile*" --depends-on="build_runner" "flutter packages pub run build_runner build"
+    description: build_runner build all feature modules.
 
   # build runner watch
   watch_all:
@@ -50,6 +70,30 @@ scripts:
     run: dart pub global run melos exec --fail-fast --scope="*shared*" --depends-on="build_runner" "flutter packages pub run build_runner watch"
     description: build_runner watch shared module.
 
+  watch_app_core:
+    run: dart pub global run melos exec --fail-fast --scope="*app_core*" --depends-on="build_runner" "flutter packages pub run build_runner watch"
+    description: build_runner watch app_core module.
+
+  watch_authentication:
+    run: dart pub global run melos exec --fail-fast --scope="*authentication*" --depends-on="build_runner" "flutter packages pub run build_runner watch"
+    description: build_runner watch authentication feature.
+
+  watch_home:
+    run: dart pub global run melos exec --fail-fast --scope="*home*" --depends-on="build_runner" "flutter packages pub run build_runner watch"
+    description: build_runner watch home feature.
+
+  watch_product:
+    run: dart pub global run melos exec --fail-fast --scope="*product*" --depends-on="build_runner" "flutter packages pub run build_runner watch"
+    description: build_runner watch product feature.
+
+  watch_profile:
+    run: dart pub global run melos exec --fail-fast --scope="*profile*" --depends-on="build_runner" "flutter packages pub run build_runner watch"
+    description: build_runner watch profile feature.
+
+  watch_features:
+    run: dart pub global run melos exec --fail-fast --scope="*authentication*" --scope="*home*" --scope="*product*" --scope="*profile*" --depends-on="build_runner" "flutter packages pub run build_runner watch"
+    description: build_runner watch all feature modules.
+
   # build runner build --delete-conflicting-outputs
   force_build_all:
     run: dart pub global run melos exec --depends-on="build_runner" "flutter packages pub run build_runner build --delete-conflicting-outputs"
@@ -71,6 +115,30 @@ scripts:
     run: dart pub global run melos exec --fail-fast --scope="*shared*" --depends-on="build_runner" "flutter packages pub run build_runner build --delete-conflicting-outputs"
     description: build_runner build shared module.
 
+  force_build_app_core:
+    run: dart pub global run melos exec --fail-fast --scope="*app_core*" --depends-on="build_runner" "flutter packages pub run build_runner build --delete-conflicting-outputs"
+    description: build_runner build app_core module.
+
+  force_build_authentication:
+    run: dart pub global run melos exec --fail-fast --scope="*authentication*" --depends-on="build_runner" "flutter packages pub run build_runner build --delete-conflicting-outputs"
+    description: build_runner build authentication feature.
+
+  force_build_home:
+    run: dart pub global run melos exec --fail-fast --scope="*home*" --depends-on="build_runner" "flutter packages pub run build_runner build --delete-conflicting-outputs"
+    description: build_runner build home feature.
+
+  force_build_product:
+    run: dart pub global run melos exec --fail-fast --scope="*product*" --depends-on="build_runner" "flutter packages pub run build_runner build --delete-conflicting-outputs"
+    description: build_runner build product feature.
+
+  force_build_profile:
+    run: dart pub global run melos exec --fail-fast --scope="*profile*" --depends-on="build_runner" "flutter packages pub run build_runner build --delete-conflicting-outputs"
+    description: build_runner build profile feature.
+
+  force_build_features:
+    run: dart pub global run melos exec --fail-fast --scope="*authentication*" --scope="*home*" --scope="*product*" --scope="*profile*" --depends-on="build_runner" "flutter packages pub run build_runner build --delete-conflicting-outputs"
+    description: build_runner build all feature modules.
+
   # build runner watch --delete-conflicting-outputs
   force_watch_all:
     run: dart pub global run melos exec --depends-on="build_runner" "flutter packages pub run build_runner watch --delete-conflicting-outputs"
@@ -91,6 +159,30 @@ scripts:
   force_watch_shared:
     run: dart pub global run melos exec --fail-fast --scope="*shared*" --depends-on="build_runner" "flutter packages pub run build_runner watch --delete-conflicting-outputs"
     description: build_runner watch shared module.
+
+  force_watch_app_core:
+    run: dart pub global run melos exec --fail-fast --scope="*app_core*" --depends-on="build_runner" "flutter packages pub run build_runner watch --delete-conflicting-outputs"
+    description: build_runner watch app_core module.
+
+  force_watch_authentication:
+    run: dart pub global run melos exec --fail-fast --scope="*authentication*" --depends-on="build_runner" "flutter packages pub run build_runner watch --delete-conflicting-outputs"
+    description: build_runner watch authentication feature.
+
+  force_watch_home:
+    run: dart pub global run melos exec --fail-fast --scope="*home*" --depends-on="build_runner" "flutter packages pub run build_runner watch --delete-conflicting-outputs"
+    description: build_runner watch home feature.
+
+  force_watch_product:
+    run: dart pub global run melos exec --fail-fast --scope="*product*" --depends-on="build_runner" "flutter packages pub run build_runner watch --delete-conflicting-outputs"
+    description: build_runner watch product feature.
+
+  force_watch_profile:
+    run: dart pub global run melos exec --fail-fast --scope="*profile*" --depends-on="build_runner" "flutter packages pub run build_runner watch --delete-conflicting-outputs"
+    description: build_runner watch profile feature.
+
+  force_watch_features:
+    run: dart pub global run melos exec --fail-fast --scope="*authentication*" --scope="*home*" --scope="*product*" --scope="*profile*" --depends-on="build_runner" "flutter packages pub run build_runner watch --delete-conflicting-outputs"
+    description: build_runner watch all feature modules.
 
   l10n:
     run: dart pub global run melos exec --fail-fast --scope="*resources*" --flutter -- flutter pub run intl_utils:generate
@@ -119,6 +211,30 @@ scripts:
   test_shared:
     run: dart pub global run melos exec --fail-fast --scope="*shared*" "flutter test"
     description: Run test shared module.
+
+  test_app_core:
+    run: dart pub global run melos exec --fail-fast --scope="*app_core*" "flutter test"
+    description: Run test app_core module.
+
+  test_authentication:
+    run: dart pub global run melos exec --fail-fast --scope="*authentication*" "flutter test"
+    description: Run test authentication feature.
+
+  test_home:
+    run: dart pub global run melos exec --fail-fast --scope="*home*" "flutter test"
+    description: Run test home feature.
+
+  test_product:
+    run: dart pub global run melos exec --fail-fast --scope="*product*" "flutter test"
+    description: Run test product feature.
+
+  test_profile:
+    run: dart pub global run melos exec --fail-fast --scope="*profile*" "flutter test"
+    description: Run test profile feature.
+
+  test_features:
+    run: dart pub global run melos exec --fail-fast --scope="*authentication*" --scope="*home*" --scope="*product*" --scope="*profile*" "flutter test"
+    description: Run test all feature modules.
 
   format:
     run: melos exec --fail-fast --flutter -- "find . -name "*.dart" ! -name "*.g.dart" ! -name "*.freezed.dart" ! -name "*.gr.dart" ! -name "*.config.dart" ! -name "*.mocks.dart" ! -name "*.mapper.dart" ! -path '*/generated/*' ! -path '*/.dart_tool/*' | tr '\n' ' ' | xargs dart format --set-exit-if-changed -l 100"

@@ -1,0 +1,8 @@
+# melos_managed_dependency_overrides: domain,resources,shared
+dependency_overrides:
+  domain:
+    path: ../domain
+  resources:
+    path: ../resources
+  shared:
+    path: ../shared
