@@ -3,7 +3,7 @@ import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:resources/resources.dart';
 
-import '../../../app.dart';
+import '../../../../app.dart';
 import 'bloc/search.dart';
 
 @RoutePage()

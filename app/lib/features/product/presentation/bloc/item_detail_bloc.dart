@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../app.dart';
+import '../../../../app.dart';
 import 'item_detail.dart';
 
 @Injectable()

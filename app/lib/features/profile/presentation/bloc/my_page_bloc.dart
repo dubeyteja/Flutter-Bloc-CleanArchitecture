@@ -4,7 +4,7 @@ import 'package:domain/domain.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../app.dart';
+import '../../../../app.dart';
 import 'my_page.dart';
 
 @Injectable()

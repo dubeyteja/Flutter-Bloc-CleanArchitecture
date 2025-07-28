@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../base/bloc/base_bloc_event.dart';
+import '../../../../base/bloc/base_bloc_event.dart';
 
 part 'search_event.freezed.dart';
 

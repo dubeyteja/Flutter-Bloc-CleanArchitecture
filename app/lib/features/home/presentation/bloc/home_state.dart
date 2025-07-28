@@ -2,7 +2,7 @@ import 'package:domain/domain.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shared/shared.dart';
 
-import '../../../base/bloc/base_bloc_state.dart';
+import '../../../../base/bloc/base_bloc_state.dart';
 
 part 'home_state.freezed.dart';
 
