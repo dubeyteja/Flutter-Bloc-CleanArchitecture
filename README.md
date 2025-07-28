@@ -10,11 +10,20 @@
 
 * How to build the tool: https://medium.com/@NALSengineering/code-2x-faster-with-custom-vscode-extensions-4f68e362be3d
 
-# Flutter Bloc - Clean Architecture
+# Flutter Bloc - Clean Architecture (Feature-First)
 
-Flutter project using clean architecture and bloc pattern.
+Flutter project using clean architecture and bloc pattern with a **feature-first** organization approach.
+
+> 📖 **New**: This project now uses Feature-First Clean Architecture. See [FEATURE_FIRST_ARCHITECTURE.md](FEATURE_FIRST_ARCHITECTURE.md) for details.
 
 ![Architecture](images/project_architecture.png?raw=true)
+
+## Architecture Highlights
+
+- **Feature-First Organization**: Code organized by business features rather than technical layers
+- **Clean Architecture**: Separation of concerns with clear dependency rules
+- **Scalable Structure**: Easy to maintain and extend with new features
+- **Team Collaboration**: Multiple teams can work on different features independently
 
 ## Features
 
@@ -64,17 +73,17 @@ https://user-images.githubusercontent.com/22645452/204954653-a704d380-0f6a-419d-
 
 ### Requirements
 
-- Dart: 3.1.0
-- Flutter SDK: 3.13.1
-- Melos: 3.1.0
-- CocoaPods: 1.12.0
+- Dart: 3.5.4+
+- Flutter SDK: 3.24.4+
+- Melos: 6.2.0+
+- CocoaPods: 1.12.0+
 
 ### Install
 
 - WARN: If you already installed `melos` and `lefthook`, you could omit this step.
 
 - Install melos:
-    - Run `dart pub global activate melos 3.1.0`
+    - Run `dart pub global activate melos 6.2.0`
 
 - Install lefthook (optional):
     - Run `gem install lefthook`

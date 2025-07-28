@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared/shared.dart';
 
-import '../../app.dart';
+import '../../../app.dart';
 import 'bloc/home.dart';
 
 @RoutePage()
