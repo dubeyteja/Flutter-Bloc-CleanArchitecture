@@ -27,7 +27,9 @@ class RegisterAccountUseCase
 }
 
 @freezed
-class RegisterAccountInput extends BaseInput with _$RegisterAccountInput {
+sealed class RegisterAccountInput extends BaseInput
+    with _$RegisterAccountInput {
+  const RegisterAccountInput._();
   const factory RegisterAccountInput({
     required String username,
     required String email,
@@ -37,7 +39,8 @@ class RegisterAccountInput extends BaseInput with _$RegisterAccountInput {
 }
 
 @freezed
-class RegisterAccountOutput extends BaseOutput with _$RegisterAccountOutput {
+sealed class RegisterAccountOutput extends BaseOutput
+    with _$RegisterAccountOutput {
   const RegisterAccountOutput._();
 
   const factory RegisterAccountOutput() = _RegisterAccountOutput;

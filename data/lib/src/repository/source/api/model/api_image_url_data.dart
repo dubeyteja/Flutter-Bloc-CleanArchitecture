@@ -4,7 +4,8 @@ part 'api_image_url_data.freezed.dart';
 part 'api_image_url_data.g.dart';
 
 @freezed
-class ApiImageUrlData with _$ApiImageUrlData {
+sealed class ApiImageUrlData with _$ApiImageUrlData {
+  const ApiImageUrlData._();
   const factory ApiImageUrlData({
     @JsonKey(name: 'origin') String? origin,
     @JsonKey(name: 'sm') String? sm,
@@ -12,7 +13,6 @@ class ApiImageUrlData with _$ApiImageUrlData {
     @JsonKey(name: 'lg') String? lg,
   }) = _ApiImageUrlData;
 
-  const ApiImageUrlData._();
-
-  factory ApiImageUrlData.fromJson(Map<String, dynamic> json) => _$ApiImageUrlDataFromJson(json);
+  factory ApiImageUrlData.fromJson(Map<String, dynamic> json) =>
+      _$ApiImageUrlDataFromJson(json);
 }

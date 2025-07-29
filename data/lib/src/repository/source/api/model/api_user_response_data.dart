@@ -6,7 +6,8 @@ part 'api_user_response_data.freezed.dart';
 part 'api_user_response_data.g.dart';
 
 @freezed
-class ApiUserResponseData with _$ApiUserResponseData {
+sealed class ApiUserResponseData with _$ApiUserResponseData {
+  const ApiUserResponseData._();
   const factory ApiUserResponseData({
     @JsonKey(name: 'user') ApiUserData? userData,
   }) = _ApiUserResponseData;

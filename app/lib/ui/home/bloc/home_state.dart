@@ -7,7 +7,8 @@ import '../../../base/bloc/base_bloc_state.dart';
 part 'home_state.freezed.dart';
 
 @freezed
-class HomeState extends BaseBlocState with _$HomeState {
+sealed class HomeState extends BaseBlocState with _$HomeState {
+  const HomeState._();
   factory HomeState({
     @Default(LoadMoreOutput<User>(data: <User>[])) LoadMoreOutput<User> users,
     @Default(false) bool isShimmerLoading,

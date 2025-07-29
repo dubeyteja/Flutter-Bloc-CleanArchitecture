@@ -6,7 +6,6 @@ class AppTextField extends StatelessWidget {
   const AppTextField({
     required this.title,
     this.hintText = '',
-    this.suffixIcon,
     this.controller,
     this.onChanged,
     this.onTap,
@@ -16,7 +15,6 @@ class AppTextField extends StatelessWidget {
 
   final String title;
   final String hintText;
-  final SvgGenImage? suffixIcon;
   final void Function(String)? onChanged;
   final VoidCallback? onTap;
   final TextInputType keyboardType;

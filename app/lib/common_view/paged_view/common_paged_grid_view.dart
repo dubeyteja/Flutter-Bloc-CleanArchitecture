@@ -11,7 +11,8 @@ class CommonPagedGridView<T> extends StatelessWidget {
     required this.itemBuilder,
     required this.gridDelegate,
     this.animateTransitions = true,
-    this.transitionDuration = DurationConstants.defaultListGridTransitionDuration,
+    this.transitionDuration =
+        DurationConstants.defaultListGridTransitionDuration,
     this.firstPageErrorIndicator,
     this.newPageErrorIndicator,
     this.firstPageProgressIndicator,
@@ -90,39 +91,48 @@ class CommonPagedGridView<T> extends StatelessWidget {
       newPageErrorIndicatorBuilder: (_) =>
           newPageErrorIndicator ?? const CommonNewPageErrorIndicator(),
       firstPageProgressIndicatorBuilder: (_) =>
-          firstPageProgressIndicator ?? const CommonFirstPageProgressIndicator(),
+          firstPageProgressIndicator ??
+          const CommonFirstPageProgressIndicator(),
       newPageProgressIndicatorBuilder: (_) =>
           newPageProgressIndicator ?? const CommonNewPageProgressIndicator(),
       noItemsFoundIndicatorBuilder: (_) =>
           noItemsFoundIndicator ?? const CommonNoItemsFoundIndicator(),
       noMoreItemsIndicatorBuilder: (_) =>
           noMoreItemsIndicator ?? const CommonNoMoreItemsIndicator(),
+      invisibleItemsThreshold: PagingConstants.defaultInvisibleItemsThreshold,
     );
 
-    final pagedView = PagedGridView<int, T>(
-      pagingController: pagingController.pagingController,
-      builderDelegate: builderDelegate,
-      gridDelegate: gridDelegate,
-      scrollDirection: scrollDirection,
-      reverse: reverse,
-      scrollController: scrollController,
-      primary: primary,
-      physics: physics,
-      shrinkWrap: shrinkWrap,
-      padding: padding,
-      cacheExtent: cacheExtent,
-      dragStartBehavior: dragStartBehavior,
-      keyboardDismissBehavior: keyboardDismissBehavior,
-      restorationId: restorationId,
-      clipBehavior: clipBehavior,
-      addAutomaticKeepAlives: addAutomaticKeepAlives,
-      addRepaintBoundaries: addRepaintBoundaries,
-      addSemanticIndexes: addSemanticIndexes,
-      showNewPageErrorIndicatorAsGridChild: showNewPageErrorIndicatorAsGridChild,
-      showNewPageProgressIndicatorAsGridChild: showNewPageProgressIndicatorAsGridChild,
-      showNoMoreItemsIndicatorAsGridChild: showNoMoreItemsIndicatorAsGridChild,
+    return ValueListenableBuilder<PagingState<int, T>>(
+      valueListenable: pagingController.stateNotifier,
+      builder: (context, state, child) {
+        return PagedGridView<int, T>(
+          state: state,
+          fetchNextPage: pagingController.fetchNextPage,
+          builderDelegate: builderDelegate,
+          gridDelegate: gridDelegate,
+          scrollDirection: scrollDirection,
+          reverse: reverse,
+          scrollController: scrollController,
+          primary: primary,
+          physics: physics,
+          shrinkWrap: shrinkWrap,
+          padding: padding,
+          cacheExtent: cacheExtent,
+          dragStartBehavior: dragStartBehavior,
+          keyboardDismissBehavior: keyboardDismissBehavior,
+          restorationId: restorationId,
+          clipBehavior: clipBehavior,
+          addAutomaticKeepAlives: addAutomaticKeepAlives,
+          addRepaintBoundaries: addRepaintBoundaries,
+          addSemanticIndexes: addSemanticIndexes,
+          showNewPageErrorIndicatorAsGridChild:
+              showNewPageErrorIndicatorAsGridChild,
+          showNewPageProgressIndicatorAsGridChild:
+              showNewPageProgressIndicatorAsGridChild,
+          showNoMoreItemsIndicatorAsGridChild:
+              showNoMoreItemsIndicatorAsGridChild,
+        );
+      },
     );
-
-    return pagedView;
   }
 }

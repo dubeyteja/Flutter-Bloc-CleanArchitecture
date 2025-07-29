@@ -26,7 +26,8 @@ class _MyPagePageState extends BasePageState<MyPagePage, MyPageBloc> {
           child: Column(
             children: [
               BlocBuilder<AppBloc, AppState>(
-                buildWhen: (previous, current) => previous.isDarkTheme != current.isDarkTheme,
+                buildWhen: (previous, current) =>
+                    previous.isDarkTheme != current.isDarkTheme,
                 builder: (context, state) {
                   return SwitchListTile.adaptive(
                     title: Text(
@@ -42,7 +43,8 @@ class _MyPagePageState extends BasePageState<MyPagePage, MyPageBloc> {
                 },
               ),
               BlocBuilder<AppBloc, AppState>(
-                buildWhen: (previous, current) => previous.languageCode != current.languageCode,
+                buildWhen: (previous, current) =>
+                    previous.languageCode != current.languageCode,
                 builder: (context, state) {
                   return SwitchListTile.adaptive(
                     title: Text(
@@ -52,7 +54,9 @@ class _MyPagePageState extends BasePageState<MyPagePage, MyPageBloc> {
                     tileColor: AppColors.current.primaryColor,
                     value: state.languageCode == LanguageCode.ja,
                     onChanged: (isJa) => appBloc.add(
-                      AppLanguageChanged(languageCode: isJa ? LanguageCode.ja : LanguageCode.en),
+                      AppLanguageChanged(
+                          languageCode:
+                              isJa ? LanguageCode.ja : LanguageCode.en),
                     ),
                   );
                 },
@@ -61,7 +65,8 @@ class _MyPagePageState extends BasePageState<MyPagePage, MyPageBloc> {
               ElevatedButton(
                 onPressed: () => bloc.add(const LogoutButtonPressed()),
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(AppColors.current.primaryColor),
+                  backgroundColor:
+                      WidgetStateProperty.all(AppColors.current.primaryColor),
                 ),
                 child: Text(
                   S.current.logout,

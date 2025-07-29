@@ -9,7 +9,8 @@ class CommonPagedSliverList<T> extends StatelessWidget {
     required this.pagingController,
     required this.itemBuilder,
     this.animateTransitions = true,
-    this.transitionDuration = DurationConstants.defaultListGridTransitionDuration,
+    this.transitionDuration =
+        DurationConstants.defaultListGridTransitionDuration,
     this.firstPageErrorIndicator,
     this.newPageErrorIndicator,
     this.firstPageProgressIndicator,
@@ -60,38 +61,45 @@ class CommonPagedSliverList<T> extends StatelessWidget {
       newPageErrorIndicatorBuilder: (_) =>
           newPageErrorIndicator ?? const CommonNewPageErrorIndicator(),
       firstPageProgressIndicatorBuilder: (_) =>
-          firstPageProgressIndicator ?? const CommonFirstPageProgressIndicator(),
+          firstPageProgressIndicator ??
+          const CommonFirstPageProgressIndicator(),
       newPageProgressIndicatorBuilder: (_) =>
           newPageProgressIndicator ?? const CommonNewPageProgressIndicator(),
       noItemsFoundIndicatorBuilder: (_) =>
           noItemsFoundIndicator ?? const CommonNoItemsFoundIndicator(),
       noMoreItemsIndicatorBuilder: (_) =>
           noMoreItemsIndicator ?? const CommonNoMoreItemsIndicator(),
+      invisibleItemsThreshold: PagingConstants.defaultInvisibleItemsThreshold,
     );
 
-    final pagedView = separatorBuilder != null
-        ? PagedSliverList.separated(
-            pagingController: pagingController.pagingController,
-            builderDelegate: builderDelegate,
-            separatorBuilder: separatorBuilder!,
-            addAutomaticKeepAlives: addAutomaticKeepAlives,
-            addRepaintBoundaries: addRepaintBoundaries,
-            addSemanticIndexes: addSemanticIndexes,
-            itemExtent: itemExtent,
-            shrinkWrapFirstPageIndicators: shrinkWrapFirstPageIndicators,
-            semanticIndexCallback: semanticIndexCallback,
-          )
-        : PagedSliverList<int, T>(
-            pagingController: pagingController.pagingController,
-            builderDelegate: builderDelegate,
-            addAutomaticKeepAlives: addAutomaticKeepAlives,
-            addRepaintBoundaries: addRepaintBoundaries,
-            addSemanticIndexes: addSemanticIndexes,
-            itemExtent: itemExtent,
-            shrinkWrapFirstPageIndicators: shrinkWrapFirstPageIndicators,
-            semanticIndexCallback: semanticIndexCallback,
-          );
-
-    return pagedView;
+    return ValueListenableBuilder<PagingState<int, T>>(
+      valueListenable: pagingController.stateNotifier,
+      builder: (context, state, child) {
+        return separatorBuilder != null
+            ? PagedSliverList.separated(
+                state: state,
+                fetchNextPage: pagingController.fetchNextPage,
+                builderDelegate: builderDelegate,
+                separatorBuilder: separatorBuilder!,
+                addAutomaticKeepAlives: addAutomaticKeepAlives,
+                addRepaintBoundaries: addRepaintBoundaries,
+                addSemanticIndexes: addSemanticIndexes,
+                itemExtent: itemExtent,
+                shrinkWrapFirstPageIndicators: shrinkWrapFirstPageIndicators,
+                semanticIndexCallback: semanticIndexCallback,
+              )
+            : PagedSliverList<int, T>(
+                state: state,
+                fetchNextPage: pagingController.fetchNextPage,
+                builderDelegate: builderDelegate,
+                addAutomaticKeepAlives: addAutomaticKeepAlives,
+                addRepaintBoundaries: addRepaintBoundaries,
+                addSemanticIndexes: addSemanticIndexes,
+                itemExtent: itemExtent,
+                shrinkWrapFirstPageIndicators: shrinkWrapFirstPageIndicators,
+                semanticIndexCallback: semanticIndexCallback,
+              );
+      },
+    );
   }
 }

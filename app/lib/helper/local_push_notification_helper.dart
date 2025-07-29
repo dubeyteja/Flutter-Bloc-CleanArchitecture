@@ -8,13 +8,14 @@ import 'package:shared/shared.dart';
 
 @LazySingleton()
 class LocalPushNotificationHelper with LogMixin {
-  static const _channelId = 'jp.flutter.app';
+  static const _channelId = 'com.resilientforge.app';
   static const _channelName = 'NFT';
   static const _channelDescription = 'NFT';
   static const _androidDefaultIcon = 'ic_app_logo';
   static const _bitCount = 31;
 
-  int get _randomNotificationId => Random().nextInt(pow(2, _bitCount).toInt() - 1);
+  int get _randomNotificationId =>
+      Random().nextInt(pow(2, _bitCount).toInt() - 1);
 
   static Future<void> init() async {
     /// Change icon at android\app\src\main\res\drawable\app_icon.png
@@ -42,7 +43,8 @@ class LocalPushNotificationHelper with LogMixin {
     /// We use this channel in the `AndroidManifest.xml` file to override the
     /// default FCM channel to enable heads up notifications.
     await FlutterLocalNotificationsPlugin()
-        .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
+        .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>()
         ?.createNotificationChannel(const AndroidNotificationChannel(
           _channelId,
           _channelName,
@@ -90,6 +92,7 @@ class LocalPushNotificationHelper with LogMixin {
           platformChannelSpecifics,
           // TODO(minh): handle later payload: jsonEncode(data),
         )
-        .onError((error, stackTrace) => logE('Can not show notification cause $error'));
+        .onError((error, stackTrace) =>
+            logE('Can not show notification cause $error'));
   }
 }

@@ -1,7 +1,8 @@
 # melos_managed_dependency_overrides: nals_lints,resources,shared
 dependency_overrides:
-  analyzer: 6.9.0
-  custom_lint: ^0.7.0
+  # analyzer: 6.9.0
+  # custom_lint: ^0.7.5
+  source_gen: ^2.0.0
   nals_lints:
     path: ../nals_lints
   resources:

@@ -11,8 +11,9 @@ class RouteGuard extends AutoRouteGuard {
 
   final IsLoggedInUseCase _isLoggedInUseCase;
 
-  bool get _isLoggedIn =>
-      runCatching(action: () => _isLoggedInUseCase.execute(const IsLoggedInInput())).when(
+  bool get _isLoggedIn => runCatching(
+              action: () => _isLoggedInUseCase.execute(const IsLoggedInInput()))
+          .when(
         success: (output) => output.isLoggedIn,
         failure: (e) => false,
       );

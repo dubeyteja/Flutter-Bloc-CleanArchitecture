@@ -6,7 +6,7 @@ import '../../domain.dart';
 part 'user.freezed.dart';
 
 @freezed
-class User with _$User {
+sealed class User with _$User {
   const factory User({
     @Default(User.defaultId) int id,
     @Default(User.defaultEmail) String email,

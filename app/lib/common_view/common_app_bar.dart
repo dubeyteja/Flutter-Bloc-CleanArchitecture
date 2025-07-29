@@ -91,10 +91,12 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
       bottomOpacity: bottomOpacity,
       leadingWidth: leadingWidth,
       systemOverlayStyle: systemOverlayStyle,
-      leading: leadingIcon == LeadingIcon.hambuger || leadingIcon == LeadingIcon.none
+      leading: leadingIcon == LeadingIcon.hambuger ||
+              leadingIcon == LeadingIcon.none
           ? null
           : GestureDetector(
-              onTap: onLeadingPressed ?? () => context.read<AppNavigator>().pop(),
+              onTap:
+                  onLeadingPressed ?? () => context.read<AppNavigator>().pop(),
               child: Padding(
                 padding: EdgeInsets.only(left: Dimens.d16.responsive()),
                 child: _buildIcon(
@@ -121,7 +123,8 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   Widget _buildIcon(SvgGenImage svg) {
     return svg.svg(
-      colorFilter: leadingIconColor?.let((it) => ColorFilter.mode(it, BlendMode.srcIn)),
+      colorFilter:
+          leadingIconColor?.let((it) => ColorFilter.mode(it, BlendMode.srcIn)),
       width: Dimens.d24.responsive(),
       height: Dimens.d24.responsive(),
     );

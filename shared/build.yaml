@@ -1,0 +1,8 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        options:
+          # Generate when/map methods for all union types
+          when: true
+          map: true

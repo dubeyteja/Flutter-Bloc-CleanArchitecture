@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'image_url.freezed.dart';
 
 @freezed
-class ImageUrl with _$ImageUrl {
+sealed class ImageUrl with _$ImageUrl {
   const factory ImageUrl({
     @Default(ImageUrl.defaultOrigin) String origin,
     @Default(ImageUrl.defaultSm) String sm,

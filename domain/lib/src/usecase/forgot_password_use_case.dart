@@ -7,7 +7,8 @@ import '../../../domain.dart';
 part 'forgot_password_use_case.freezed.dart';
 
 @Injectable()
-class ForgotPasswordUseCase extends BaseFutureUseCase<ForgotPasswordInput, ForgotPasswordOutput> {
+class ForgotPasswordUseCase
+    extends BaseFutureUseCase<ForgotPasswordInput, ForgotPasswordOutput> {
   const ForgotPasswordUseCase(this._repository);
 
   final Repository _repository;
@@ -28,14 +29,16 @@ class ForgotPasswordUseCase extends BaseFutureUseCase<ForgotPasswordInput, Forgo
 }
 
 @freezed
-class ForgotPasswordInput extends BaseInput with _$ForgotPasswordInput {
+sealed class ForgotPasswordInput extends BaseInput with _$ForgotPasswordInput {
+  const ForgotPasswordInput._();
   const factory ForgotPasswordInput({
     required String email,
   }) = _ForgotPasswordInput;
 }
 
 @freezed
-class ForgotPasswordOutput extends BaseOutput with _$ForgotPasswordOutput {
+sealed class ForgotPasswordOutput extends BaseOutput
+    with _$ForgotPasswordOutput {
   const ForgotPasswordOutput._();
 
   const factory ForgotPasswordOutput() = _ForgotPasswordOutput;

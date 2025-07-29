@@ -6,7 +6,8 @@ import '../../domain.dart';
 part 'is_logged_in_use_case.freezed.dart';
 
 @Injectable()
-class IsLoggedInUseCase extends BaseSyncUseCase<IsLoggedInInput, IsLoggedInOutput> {
+class IsLoggedInUseCase
+    extends BaseSyncUseCase<IsLoggedInInput, IsLoggedInOutput> {
   const IsLoggedInUseCase(this._repository);
 
   final Repository _repository;
@@ -18,13 +19,15 @@ class IsLoggedInUseCase extends BaseSyncUseCase<IsLoggedInInput, IsLoggedInOutpu
   }
 }
 
-@freezed
-class IsLoggedInInput extends BaseInput with _$IsLoggedInInput {
+@Freezed(
+    when: FreezedWhenOptions(when: true), map: FreezedMapOptions(map: true))
+sealed class IsLoggedInInput extends BaseInput with _$IsLoggedInInput {
+  const IsLoggedInInput._();
   const factory IsLoggedInInput() = _IsLoggedInInput;
 }
 
 @freezed
-class IsLoggedInOutput extends BaseOutput with _$IsLoggedInOutput {
+sealed class IsLoggedInOutput extends BaseOutput with _$IsLoggedInOutput {
   const IsLoggedInOutput._();
 
   const factory IsLoggedInOutput({
