@@ -4,7 +4,7 @@ export 'package:analyzer/dart/ast/visitor.dart';
 export 'package:analyzer/dart/element/element.dart';
 export 'package:analyzer/dart/element/nullability_suffix.dart';
 export 'package:analyzer/dart/element/type.dart';
-export 'package:analyzer/error/error.dart';
+export 'package:analyzer/error/error.dart' hide LintCode;
 export 'package:analyzer/error/listener.dart';
 export 'package:analyzer/source/line_info.dart';
 export 'package:analyzer/source/source_range.dart';
@@ -14,7 +14,8 @@ export 'package:analyzer_plugin/protocol/protocol_common.dart'
 export 'package:analyzer_plugin/src/utilities/change_builder/change_builder_dart.dart';
 export 'package:analyzer_plugin/utilities/change_builder/change_builder_dart.dart';
 export 'package:collection/collection.dart';
-export 'package:custom_lint_builder/custom_lint_builder.dart';
+export 'package:custom_lint_builder/custom_lint_builder.dart' hide LintCode;
+export 'package:custom_lint_core/custom_lint_core.dart' show LintCode;
 export 'package:dart_style/dart_style.dart';
 export 'package:pubspec_parse/pubspec_parse.dart';
 

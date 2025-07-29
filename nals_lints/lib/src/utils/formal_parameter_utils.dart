@@ -1,11 +1,11 @@
 import '../index.dart';
 
 extension FormalParameterExt on FormalParameter {
-  DartType? get type => declaredElement?.type;
+  DartType? get type => declaredFragment?.element.type;
 
-  bool get hasDefaultValue => declaredElement?.hasDefaultValue == true;
+  bool get hasDefaultValue => declaredFragment?.element.hasDefaultValue == true;
 
-  String? get defaultValue => declaredElement?.defaultValueCode;
+  String? get defaultValue => declaredFragment?.element.defaultValueCode;
 
   bool get isNullableType => type?.isNullableType == true;
 }
